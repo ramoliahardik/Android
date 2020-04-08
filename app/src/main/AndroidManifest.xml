@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.androiddemo">
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,7 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FrameLayoutDemo"></activity>
+        <activity android:name=".MapDemo"></activity>
+        <activity android:name=".ViewPagerDemo" />
+        <activity android:name=".RecyclerViewDemo" />
+        <activity android:name=".GridDemo" />
+        <activity android:name=".FragmentDemo" />
+        <activity android:name=".ToolbarDemo" />
+        <activity android:name=".CardViewDemo" />
+        <activity android:name=".VideoViewDemo" />
+        <activity android:name=".WebViewDemo" />
+        <activity android:name=".ThemeDemo" />
+        <activity android:name=".StyleDemo" />
+        <activity android:name=".ViewsDemo" />
+        <activity android:name=".FrameLayoutDemo" />
         <activity android:name=".RelativeLayoutDemo" />
         <activity android:name=".LinearLayoutDemo" />
         <activity android:name=".Multilingual" />

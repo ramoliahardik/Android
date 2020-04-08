@@ -1,18 +1,37 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
 
-    <ImageView
-        android:src="@drawable/ic_launcher"
-        android:scaleType="fitCenter"
-        android:layout_height="250px"
-        android:layout_width="250px"/>
+    android:id="@+id/framelayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:foregroundGravity="fill"
+    android:foreground="#0f0"><!--foreground color for a FrameLayout-->
 
-    <TextView
-        android:text="Frame Demo"
-        android:textSize="30px"
-        android:textStyle="bold"
-        android:layout_height="fill_parent"
-        android:layout_width="fill_parent"
-        android:gravity="center"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+
+        <!-- Imageview will not be shown because of foreground color which is drawn over it-->
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="10dp"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="centerCrop"
+            />
+
+        <!--Textview will not be shown because of foreground color is drawn over it-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="abhiAndroid"/>
+
+    </LinearLayout>
+
 </FrameLayout>
