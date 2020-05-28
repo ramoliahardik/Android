@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.androiddemo">
     <!-- To access Google+ APIs: -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyBmyIjLxj1aZZXpad6PUi6pGwyPxm0ksKs" />
 
     <application
         android:allowBackup="true"
@@ -10,8 +18,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MapDemo"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".CustomContentProviderDemo"></activity>
+        <activity android:name=".ContentProviderDemo" />
+        <activity android:name=".LoadImageDemo" />
+        <activity android:name=".SQLiteDemo" />
+        <activity android:name=".IntentServiceDemo" />
+        <activity android:name=".BoundServiceDemo" />
+        <activity android:name=".UserListRESTAPIDemo" />
+        <activity android:name=".GoogleMapDemo" />
+        <activity android:name=".BroadCastDemo" />
         <activity android:name=".ViewPagerDemo" />
         <activity android:name=".RecyclerViewDemo" />
         <activity android:name=".GridDemo" />
@@ -34,6 +52,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".MyResultReceiver" />
+        <service
+            android:name=".RandomNumberGeneratorService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.boundservices.RandomNumberGeneratorService" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service android:name=".MyIntentService" />
+
+        <service
+            android:name=".java.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+
+        <provider
+            android:authorities="com.example.androiddemo"
+            android:name=".CustomContentProviderDemo"
+            android:exported="true"
+            android:grantUriPermissions="true"></provider>
     </application>
 
 </manifest>
