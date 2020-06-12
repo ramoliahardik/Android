@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <meta-data
         android:name="com.google.android.geo.API_KEY"
@@ -21,7 +24,13 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".CustomContentProviderDemo"></activity>
+        <activity android:name=".BLEDemo"></activity>
+        <activity android:name=".WebsocketDemo" />
+        <activity android:name=".MVVMDemo" />
+        <activity android:name=".MVPDemo" />
+        <activity android:name=".MVCDemo" />
+        <activity android:name=".SingletonDemo" />
+        <activity android:name=".CustomContentProviderDemo" />
         <activity android:name=".ContentProviderDemo" />
         <activity android:name=".LoadImageDemo" />
         <activity android:name=".SQLiteDemo" />
@@ -64,7 +73,6 @@
             </intent-filter>
         </service>
         <service android:name=".MyIntentService" />
-
         <service
             android:name=".java.MyFirebaseMessagingService"
             android:exported="false">
@@ -72,13 +80,13 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
+        <service android:name=".blemodule.BLEService"></service>
 
         <provider
-            android:authorities="com.example.androiddemo"
             android:name=".CustomContentProviderDemo"
+            android:authorities="com.example.androiddemo"
             android:exported="true"
-            android:grantUriPermissions="true"></provider>
+            android:grantUriPermissions="true" />
     </application>
 
 </manifest>

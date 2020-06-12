@@ -20,7 +20,8 @@ class MainActivity : AppCompatActivity() {
 
         val demoList = arrayOf<String>("Localization & Intent", "Linear Layout", "Relative Layout", "Frame Layout", "View Demo", "Style Demo", "Theme Demo",
             "Webview", "VideoView", "CardView", "Toolbar", "Fragment", "Grid", "Recycler", "View Pager", "Broadcast", "Map", "REST API Demo",
-            "Bound Service", "Intent Service", "SQLite Demo", "Load Image Demo", "Content provider demo")
+            "Bound Service", "Intent Service", "SQLite Demo", "Load Image Demo", "Content provider demo", "Singleton & Observer Demo", "MVC Demo",
+            "MVP Demo", "MVVM Demo", "Websocket demo")
         var listView = findViewById<ListView>(R.id.demoListView)
 
         listView.adapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,demoList)
@@ -40,56 +41,56 @@ class MainActivity : AppCompatActivity() {
 
         listView.setOnItemClickListener { parent, view, position, id ->
             if (position == 0) {
-                var intent = Intent(this, Multilingual::class.java)
+                val intent = Intent(this, Multilingual::class.java)
                 intent.putExtra("selected", demoList[position])
                 startActivity(intent)
             }
             else if (position == 1) {
-                var intent = Intent(this, LinearLayoutDemo::class.java)
+                val intent = Intent(this, LinearLayoutDemo::class.java)
                 startActivity(intent)
             }
             else if (position == 2) {
-                var intent = Intent(this, RelativeLayoutDemo::class.java)
+                val intent = Intent(this, RelativeLayoutDemo::class.java)
                 startActivity(intent)
             }
             else if (position == 3) {
-                var intent = Intent(this, FrameLayoutDemo::class.java)
+                val intent = Intent(this, FrameLayoutDemo::class.java)
                 startActivity(intent)
             }
             else if (position == 4) {
-                var intent = Intent(this, ViewsDemo::class.java)
+                val intent = Intent(this, ViewsDemo::class.java)
                 startActivity(intent)
             }
             else if (position == 5) {
-                var intent = Intent(this, StyleDemo::class.java)
+                val intent = Intent(this, StyleDemo::class.java)
                 startActivity(intent)
             }
             else if (position == 6) {
-                var intent = Intent(this, ThemeDemo::class.java)
+                val intent = Intent(this, ThemeDemo::class.java)
                 startActivity(intent)
             }
             else if (position == 7) {
-                var intent = Intent(this, WebViewDemo::class.java)
+                val intent = Intent(this, WebViewDemo::class.java)
                 startActivity(intent)
             }
             else if (position == 8) {
-                var intent = Intent(this, VideoViewDemo::class.java)
+                val intent = Intent(this, VideoViewDemo::class.java)
                 startActivity(intent)
             }
             else if (position == 9) {
-                var intent = Intent(this, CardViewDemo::class.java)
+                val intent = Intent(this, CardViewDemo::class.java)
                 startActivity(intent)
             }
             else if (position == 10) {
-                var intent = Intent(this, ToolbarDemo::class.java)
+                val intent = Intent(this, ToolbarDemo::class.java)
                 startActivity(intent)
             }
             else if (position == 11) {
-                var intent = Intent(this, FragmentDemo::class.java)
+                val intent = Intent(this, FragmentDemo::class.java)
                 startActivity(intent)
             }
             else if (position == 12) {
-                var intent = Intent(this, GridDemo::class.java)
+                val intent = Intent(this, GridDemo::class.java)
                 startActivity(intent)
             }
             else if (position == 13) {
@@ -132,7 +133,26 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, ContentProviderDemo::class.java)
                 startActivity(intent)
             }
-
+            else if (position == 23) {
+                val intent = Intent(this, SingletonDemo::class.java)
+                startActivity(intent)
+            }
+            else if (position == 24) {
+                val intent = Intent(this, MVCDemo::class.java)
+                startActivity(intent)
+            }
+            else if (position == 25) {
+                val intent = Intent(this, MVPDemo::class.java)
+                startActivity(intent)
+            }
+            else if (position == 26) {
+                val intent = Intent(this, MVVMDemo::class.java)
+                startActivity(intent)
+            }
+            else if (position == 27) {
+                val intent = Intent(this, WebsocketDemo::class.java)
+                startActivity(intent)
+            }
         }
     }
 }
